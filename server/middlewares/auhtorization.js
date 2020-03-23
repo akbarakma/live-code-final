@@ -4,7 +4,7 @@ const createError = require('../helpers/createError');
 const authorization = async (req, res, next) => {
   try {
     const UserId = Number(req.UserData.id);
-    const id = req.params.id;
+    const id = Number(req.params.id);
     if (!Number.isInteger(id)) {
       throw createError(400, 'Params must be a number');
     }

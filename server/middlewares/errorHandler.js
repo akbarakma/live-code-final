@@ -23,9 +23,14 @@ const errorHandler = (err, req, res, next) => {
       errors: msg,
       message: 'Bad Request Error, code: 400'
     })
+  } else if (err.name === 'ForbiddenError') {
+    res.status(403).json({
+      errors: [err.message],
+      message: 'Forbidden Error, code: 403'
+    })
   }
   else {
-    console.log(err);
+    // console.log(err);
     res.status(500).json({
       errors: ['Internal Server Error'],
       message: '500, Internal Server Error'
