@@ -4,10 +4,42 @@ module.exports = (sequelize, DataTypes) => {
   class Country extends Model {}
   Country.init(
     {
-      name: DataTypes.STRING,
-      cases: DataTypes.INTEGER,
-      deaths: DataTypes.INTEGER,
-      recovered: DataTypes.INTEGER
+      name: {
+        type: DataTypes.STRING,
+        validate: {
+          notEmpty: {
+            args: true,
+            msg: 'Name cannot be empty'
+          }
+        }
+      },
+      cases: {
+        type: DataTypes.INTEGER,
+        validate: {
+          notEmpty: {
+            args: true,
+            msg: 'Cases cannot be empty'
+          }
+        }
+      },
+      deaths: {
+        type: DataTypes.INTEGER,
+        validate: {
+          notEmpty: {
+            args: true,
+            msg: 'Deaths cannot be empty'
+          }
+        }
+      },
+      recovered: {
+        type: DataTypes.INTEGER,
+        validate: {
+          notEmpty: {
+            args: true,
+            msg: 'Name cannot be empty'
+          }
+        }
+      }
     },
     {
       sequelize

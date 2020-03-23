@@ -9,16 +9,40 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        validate: {
+          notEmpty: {
+            args: true,
+            msg: 'Name cannot be empty'
+          }
+        }
       },
       deaths: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        validate: {
+          notEmpty: {
+            args: true,
+            msg: 'Deaths cannot be empty'
+          }
+        }
       },
       recovered: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        validate: {
+          notEmpty: {
+            args: true,
+            msg: 'Name cannot be empty'
+          }
+        }
       },
       cases: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        validate: {
+          notEmpty: {
+            args: true,
+            msg: 'Cases cannot be empty'
+          }
+        }
       },
       createdAt: {
         allowNull: false,

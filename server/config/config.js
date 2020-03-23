@@ -1,11 +1,11 @@
-{
+require('dotenv').config();
+module.exports = {
   "development": {
-    "username": "postgres",
-    "password": "postgres",
-    "database": "livecode-phase2-siang",
-    "host": "127.0.0.1",
-    "dialect": "postgres",
-    "operatorsAliases": false
+    "username": process.env.DB_USERNAME,
+    "password": process.env.DB_PASSWORD,
+    "database": "p2_final_lc",
+    "host": "localhost",
+    "dialect": "postgres"
   },
   "test": {
     "username": "root",
